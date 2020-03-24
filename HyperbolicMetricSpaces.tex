@@ -130,13 +130,14 @@
 	Then given v(i) on some $\alpha_{b}$, as $\alpha_{b}$, $\alpha_{b0}$, $\alpha_{b1}$ form a geodesic triangle which is $\delta $ slim, there is a point v(i+1) on $\alpha_{b0}$ or on $\alpha_{b1}$ such that d(v(i), v(i+1)) $\leq \delta$. 
 	
 	We then obtain a sequence of points from x to p: x, $\gamma(R)$, v(0), v(1), ..., v(n) (where d(v(i), v(i+1)) $\leq \delta$ and d(v(n), p) $\leq 1$ ). Then: 
-	
-	R+r 
-	$\leq$ d(x, p) 
-	$\leq$ d(x, $\gamma(R)$) + d($\gamma(R)$, v(0))+ $\sum_{i=0}^{n-1}$ d(v(i), v(i+1)) + d(v(n), p)
-	 $\leq$ R + $\delta n$ + 1
-	 $\leq$ R + $\delta (\log_2(\ell(p))+1)$ + 1
 	 
+	 \begin{align*}
+	 R+r &\leq d(x, p) \\
+	 &\leq d(x, \gamma(R)) + d(\gamma(R), v(0))+ \sum_{i=0}^{n-1} d(v(i), v(i+1)) + d(v(n), p) \\
+	 &\leq R + \delta n + 1 \\
+	 &\leq R + \delta (\log_2(\ell(p))+1) + 1
+	 \end{align*}
+	
 	 Rearranging, we obtain $\ell(p) \geq 2^{\frac{r-1}{\delta} - 1}$
 	 
 	 Thus, defining e(n) = $\delta$ if n = 0 and e(n) = $2^{\frac{n-1}{\delta} - 1}$ for n > 0 gives the required exponential divergence function. Thus, geodesics diverge exponentially in X. 
@@ -161,48 +162,50 @@
  		
  	\end{figure}
  	
- 	Let e be a supralinear divergence function for X, that is, e is a divergence function satisfying $\lim_{n \rightarrow \infty} \frac{e(n)}{n} = \infty$. Let $\triangle xyz$ be a geodesic triangle. Let $\alpha_1$ be the isometry from [0, d(x,y)] corresponding to the geodesic [x,y] and similarly define $\alpha_2$ for [x,z] and $\alpha_3$ for [y,z]. Let T be the maximum number in [0, $min(d(x,y), d(x, z))$] such that for all $t \leq T$, $d(\alpha_1(t). \alpha_2(t)) \leq e(0)$. Let $x_1 = \alpha_1(T)$, $x_2 = \alpha_2(T)$ and similarly define points $z_1, z_2, y_1, y_2$. 
+ 	Let e be a supralinear divergence function for X, that is, e is a divergence function satisfying $\lim_{n \rightarrow \infty} \frac{e(n)}{n} = \infty$. Let $\triangle xyz$ be a geodesic triangle. Let $\alpha_1$ be the isometry from [0, d(x,y)] corresponding to the geodesic [x,y] and similarly define $\alpha_2$ for [x,z] and $\alpha_3$ for [y,z]. Let $T_1$ be the maximum number in [0, $min(d(x,y), d(x, z))$] such that for all $t \leq T$, $d(\alpha_1(t). \alpha_2(t)) \leq e(0)$. Let $x_1 = \alpha_1(T_1)$, $x_2 = \alpha_2(T_1)$ and similarly define points $z_1, z_2, y_1, y_2$ and lengths $T_2, T_3$, as illustraed in figure 5. 
  	\vs
- 	Let $L_1 = d(x_1, y_2)$ if $[x, x_1] \cap [y_2, y] = \emptyset$ and $L_1 = 0$ otherwise. Similarly define $L_2, L_3$ for the other sides of the triangle ($[y,z],[x,z]$, respectively). We may assume $L_3 > 0$ (otherwise if $L_3 = 0$, then we may swap $x_1$ and $z_2$ and redefine $T_1, T_3$ accordingly.)
+ 	Let $L_1 = d(x_2, y_1)$ if $[x, x_2] \cap [y_1, y] = \emptyset$ and $L_1 = 0$ otherwise. Similarly define $L_2, L_3$ for the other sides of the triangle ($[y,z],[x,z]$, respectively). We may assume $L_3 > 0$ (otherwise if $L_3 = 0$, then we may swap $x_1$ and $z_2$ and redefine $T_1, T_3$ accordingly.)
  	\vs
- 	We may assume, WLOG, that $L_1 \geq L_2 \geq L_3$. It then follows that $\triangle xyz$ is $ L_1/2 + e(0)$ - slim. Hence, our goal will be to bound $L_1$ above by some constant indepedent of $L_1$. 
+ 	We may assume, WLOG, that $L_1 \geq L_2 \geq L_3$. It then follows that $\triangle xyz$ is $ L_1/2 + e(0)$ - slim. Hence, our goal will be to bound $L_1$ above by some constant indepedent of the triangle. 
  	\vs
  	If $L_1 \leq 2e(0)$ then we have our bound and we are done. Hence assume $L_1 > 2e(0)$. Note that:
  	\vs
  	\begin{align*}
- 	T_3 + L_2 + e(0) + L_3 + T_2 &\geq d(y, z_2) + d(z_2, z_1) + d(z_1, x) \\
+ 	T_2 + L_2 + e(0) + L_3 + T_1 &\geq d(y, z_1) + d(z_1, z_2) + d(z_2, x) \\
     &\geq d(y, x) \\
-    &= T_3 + L_1 + L_2
+    &= T_1 + L_1 + T_2
  	\end{align*}
  	 
  	 Re-arranging, we obtain: $2L_2 \geq L_1 - e(0) \implies L_2 \geq \frac{1}{2} e(0) > 0$
  	 \vs 
  	 
- 	 Let t be the midpoint of $[x_1, y_2]$ and let t` = $\alpha_3 (T_3 + L_1/2)$. Define a path p to be the concatenation of the following geodesics: $[t, x_2], [x_2, x_1], [x_1, z_2], [z_2, z_1],[z_2, t`]$ and let U = $int(B_{T_3 + L_1/2}(y))$. We claim that p lies outside of U. 
+ 	 Let t be the midpoint of $[x_2, y_1]$ and let t` = $\alpha_3 (T_2 + L_1/2)$. Define a path p to be the concatenation of the following geodesics: $[t, x_2], [x_2, x_1], [x_1, z_2], [z_2, z_1],[z_2, t`]$ and let U = $int(B_{T_2 + L_1/2}(y))$. We claim that p lies outside of U. 
  	 \vs
  	 
  	 Indeed, to show this we show that each geodesic segment of p lies outside of U. Let $B_1 = B_{
- 	 T_1 + L_2 - L_1/2}(z)$ and $B_2 = B{T_1 + L_1/2}(x)$. Then $B_1 \cup B_2 \subset X \setminus U$, since if a $\in B_1 \cap U$, then $d(a, z) \leq T_1 + L_2 - L_1/2$ and $d(a, y) < T_3 + L_1/2$, so $T_1 + L_2 + T_3 = d(z, y) \leq d(z, a) + d(a,y) < T_1 + L_2 - L_1/2 + T_3 + L_1/2 = T_1 + L_2 + T_3$, a contradiction (a similar computation gives a contradiction if a $\in B_2 \cap U$). We demonstrate that each geodesic segment of p is contained in $X \setminus U$. 
+ 	 T_3 + L_2 - L_1/2}(z)$ and $B_2 = B{T_1 + L_1/2}(x)$. Then $B_1 \cup B_2 \subset X \setminus U$, since if a $\in B_1 \cap U$, then $d(a, z) \leq T_3 + L_2 - L_1/2$ and $d(a, y) < T_2 + L_1/2$, so $T_3 + L_2 + T_2 = d(z, y) \leq d(z, a) + d(a,y) < T_3 + L_2 - L_1/2 + T_2 + L_1/2 = T_1 + L_2 + T_3$, a contradiction (a similar computation gives a contradiction if a $\in B_2 \cap U$). We demonstrate that each geodesic segment of p is contained in $X \setminus U$. 
   \vs
   	$[t, x_2]: $ $[t, x_2] \subset B_2$ because $[t, x_2] \subset [t,x]$ and $[t,x] \subset B_2$
   	\vskip5pt
-  	$[x_2, x_1]: $ $[x_2, x_1] \subset B_2 $ because $d(x_1, x_2) \leq e(0) < L_1/2$, so for any point a $\in [x_1, x_2]$, we have $d(a, x) \leq d(a, x_1) + d(x_1, x) < d(x_1, x_2) + d(x_1, x) \leq L_1/2 + T_2$, so a $\in B_2$.
+  	$[x_2, x_1]: $ $[x_2, x_1] \subset B_2 $ because $d(x_1, x_2) \leq e(0) < L_1/2$, so for any point a $\in [x_1, x_2]$, we have $d(a, x) \leq d(a, x_1) + d(x_1, x) < d(x_1, x_2) + d(x_1, x) \leq L_1/2 + T_1$, so a $\in B_2$.
   	\vskip5pt
   	 $[x_1, z_2]: $ $\ell ([x_1, z_2]) = L_3 \leq L_2 = L_2 - L_1/2 + L_1/2$, hence $[x_1, z_2] \subset B_1 \cup B_2$. 
   	 \vskip5pt
-  	 $[z_2, z_1]: $ $[z_2, z_1] \subset B_1$ because if $a \in [z_2, z_1]$ then $d(a, z) \leq d(a, z_1) + d(z_1, z) \leq d(z_2, z_1) + d(z_1, z) \leq e(0) + T_1 \leq L_2 - L_1/2 + T_1$, hence a $\in B_1$.
+  	 $[z_2, z_1]: $ $[z_2, z_1] \subset B_1$ because if $a \in [z_2, z_1]$ then $d(a, z) \leq d(a, z_1) + d(z_1, z) \leq d(z_2, z_1) + d(z_1, z) \leq e(0) + T_3 \leq L_2 - L_1/2 + T_3$, hence a $\in B_1$.
   	 \vskip5pt
-  	 $[z_1, t`]: $ if a $\in [z_2, t`]$, then $d(a, y) \geq d(t, y) = T_3 + L_1/2$, so a $\in X \setminus U$.
+  	 $[z_1, t`]: $ if a $\in [z_2, t`]$, then $d(a, y) \geq d(t, y) = T_2 + L_1/2$, so a $\in X \setminus U$.
   	 \vskip5pt
   	 Therefore, p is contained in $X \setminus U$. 
   	 \vs
   	 Lastly, we use the path p and the supralinearity of e to bound $L_1$ above: 
   	 \vs
-  	 By definition of $T_3$, we may choose $\epsilon$ with $0 < \epsilon < e(0) < L_1/2$ such that $d(\alpha_3(T_3 + \epsilon), \alpha_2(T_3 + \epsilon)) > e(0)$. Since e is a divergence function and p is outside of $U = int(B_{T_3 + L_1/2}(y))$, we have: 
+  	 %By definition of $T_2$, we may choose $\epsilon$ with $0 < \epsilon < e(0) < L_1/2$ such that $d(\alpha_3(T_2 + \epsilon), \alpha_2(T_2 + \epsilon)) > e(0)$. 
+  	 
+  	 Since e is a divergence function and p is outside of $U = int(B_{T_2 + L_1/2}(y))$, we have (starting the path a bit before t ($\left \lfloor{L_1/2}\right \rfloor$ instead of $L/2$) to ensure that r $\in \mathbb{N}$), or we may arrange for $L_1$ to be an even integer: 
   	 \vs
-  	 $e(L_1/2 - \epsilon) \leq \ell(p) \leq L_1/2 + e(0) + L_3 + e(0) + (L_2 - L_1/2) \leq 2L_1 + 2e(0)$. 
+  	 $e(\left \lfloor{L_1/2}\right \rfloor) \leq \ell(p) \leq L_1/2 + e(0) + L_3 + e(0) + (L_2 - L_1/2) \leq 2L_1 + 2e(0)$. 
   	 \vs
-  	 Then by the supralinearity of e, it follows that $L_1$ is bounded and hence there is a constant $\delta$ (independent of $\triangle xyz$) for which $\triangle xyz$ is $\delta$-slim. 
+  	 Then since $\lim_{n \rightarrow \infty}(\frac{e(n)}{n}) = \infty $, it follows that $\lim_{n \rightarrow \infty}(\frac{e(\left \lfloor{n/2}\right \rfloor)}{2L_1} + 2e(0)) = \infty $, so $\exists M$ s.t $\forall n>M$, we have $e(\left \lfloor{n/2}\right \rfloor)) > 2n + 2e(0)$. As $2L_1 + 6e(0) \geq e(\left \lfloor{L_1/2}\right \rfloor)$, we must have $2L_1 + 2e(0) \leq M$, so $L_1$ is bounded and hence there is a constant $\delta$ (independent of $\triangle xyz$, since M above depends only on e) for which $\triangle xyz$ is $\delta$-slim. 
   	 $\square$
   	 % add pictures
  	 
@@ -215,3 +218,4 @@
 	
 	
 \end{document}
+
