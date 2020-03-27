@@ -20,19 +20,33 @@
 	
 	\section{Abstract}
 	
-	In this paper, we will examine another characterization of hyperbolicity in geodesic metric spaces: the rate of divergence of geodesic rays. We begin with a few relevant definitions concerning rates and modes of geodesic divergence. We then give examples and non-examples of metric spaces having diverging geodesics. Next, we prove a theorem demonstrating the equivalence of hyperbolicity of a geodesic metric space and the existence of a supralinear divergence function as well as the equivalance of the existence of supralinear and exponential divergence functions in geodesic metric spaces. Lastly, we prove a theorem relating the existence of divergence functions in the Cayley graph of finitely generated group (with respect to a finite generating set) and the growth rate of the group, showing that hyperbolic groups have exponential growth. 
+	In this paper, we will examine another characterization of hyperbolicity in geodesic metric spaces: the rate of divergence of geodesic rays. We begin with a few relevant definitions concerning rates and modes of geodesic divergence. We then give examples and non-examples of metric spaces having diverging geodesics. We then prove a theorem demonstrating the equivalence of hyperbolicity of a geodesic metric space and the existence of a supralinear divergence function as well as the equivalance of the existence of supralinear and exponential divergence functions in geodesic metric spaces. 
 	
 	\section{Divergence functions}
 	
-	$\mathbf{Def:}$ Let (X,d) be a geodesic metric space. A $\mathit{divergence}$ $\mathit{ function}$ is an unbounded function e: $\mathbb{N}$ $\rightarrow$ $\mathbb{R}$ satisfying the following condition:
+	$\mathbf{Def:}$ Let (X,d) be a geodesic metric space. A $\mathit{divergence}$ $\mathit{ function}$ is an unbounded function e: $\mathbb{N}$ $\rightarrow$ $\mathbb{R}_{>0}$ satisfying the following condition:
 	
 	\vs
 	
-	For any R,r $\in$ $\mathbb{N}$, any point x $\in$ X and any geodesics $\gamma$ : [0, $\ell(\gamma)$] $\rightarrow$ X, $\gamma$': [0, $\ell(\gamma')$] $\rightarrow$ X emanating from x (i.e $\gamma$(0) = x = $\gamma$'(0)) of length at least R+r, if d($\gamma$(R), $\gamma'(R)$) > e(0) then for any path p contained in $X \setminus int(B_{R+r}(x))$ from $\gamma$(R+r) to $\gamma$'(R+r) we have $\ell (p) $ > e(r).
+	For any point x $\in$ X, any geodesics $\gamma$ : [0, $\ell(\gamma)$] $\rightarrow$ X, $\gamma$': [0, $\ell(\gamma')$] $\rightarrow$ X emanating from x (i.e $\gamma$(0) = x = $\gamma$'(0)) and for any $R,r \in \mathbb{N}$ with $R+r < \min(\ell(\gamma), \ell(\gamma`))$, if d($\gamma$(R), $\gamma'(R)$) > e(0) then for any path p contained in $X \setminus int(B_{R+r}(x))$ from $\gamma$(R+r) to $\gamma$'(R+r) we have $\ell (p) $ > e(r).
+	
+	\vs
+		$\mathbf{Remark:}$ Note that the divergence function is independent of any base point or geodesics, only depending on the space X. 
 	
 	\vs 
 	
-	If a geodesic metric space X has a divergence function, then we say that geodesics in X $\mathit{diverge}$. 
+	Intuitively, the divergence function measures how quickly geodesics starting from some common point move away from each other as they progress away from the starting point. Having a divergence function means that once we surpass some threshold on the distance between geodesics (given by the condition d($\gamma$(R), $\gamma'(R)$) > e(0)), then distance between the geodesics takes off faster than the divergence function (described by $\ell (p)$ > e(r) $\forall $ path p sufficiently beyond the threshold) (or the distance may remain bounded as if d($\gamma$(R), $\gamma'(R)$) > e(0) is never satisfied).
+	
+	\begin{figure}[h]
+		\centering
+		%	\includegraphics[width=1.2\linewidth, \vali]{"../Downloads/Diverging geodesics"}
+		\includegraphics[scale = 0.1]{"../Downloads/Geodesics diverging"}
+		\caption{Diverging geodesics}
+		\label{Figure 1: Diverging geodesics}
+		
+	\end{figure}
+	\vs
+	$\mathbf{Def:}$ If a geodesic metric space X has a divergence function, then we say that geodesics in X $\mathit{diverge}$. 
 	\vs
 	A divergence function e is called $\mathit{exponential }$ if $\exists a > 1 $ such that $\lim_{n \rightarrow \infty} \frac{e(n)}{a^n} = \infty$
 	\vs 
@@ -40,22 +54,8 @@
 	\vs
 	Geodesics in X are said to diverge $\mathit{exponentially}$ if there is an exponential divergence function and $\mathit{supralinearly}$ if there is a supralinear divergence function. We will prove that hyperbolic metric spaces have exponential divergence functions and we will prove that the existence of supralinear divergence functions is equivalent to the existence of exponential divergence functions in a geodesic metric space. 
 	
-	$\mathbf{Remark:}$ Note that the divergence function is independent of any base point or geodesics, only depending on the space X. 
 	
-	\vs 
-	
-	Intuitively, the divergence function measures how quickly geodesics starting from some common point move away from each other as they progress away from the starting point. Having a divergence function means that once we surpass some threshold on the distance between geodesics (given by the condition d($\gamma$(R), $\gamma'(R)$) $\geq e(0)$), then distance between the geodesics takes off faster than the divergence function (described by $\ell (p) \geq $ e(r)).
-	
-		\begin{figure}[h]
-		\centering
-		%	\includegraphics[width=1.2\linewidth, \vali]{"../Downloads/Diverging geodesics"}
-		\includegraphics[scale = 0.1]{"../Downloads/Diverging geodesics"}
-		\caption{Diverging geodesics}
-		\label{Figure 1: Diverging geodesics}
-		
-	\end{figure}
-	
-	\vskip40pt
+	\vskip60pt
 	$\mathbf{Examples:}$
 	\vs
 	1. Cay($\mathbb{Z}, \{1\}$) (with the usual path metric assigning each edge a length of 1), has diverging geodesics with divergence function e(n) = $2^n$ for all $n \in \mathbb{N}$.
@@ -93,7 +93,7 @@
 	\vs
 	$\mathbf{Theorem: }$ Let X be a hyperbolic metric space. Then X has an exponential divergence function. 
 	\vs 
-	Proof: As X is hyperbolic, geodesic triangles in X are $\delta $-slim for some $\delta \geq 0$ Let x $\in $ X and let $\gamma, \gamma'$ be distinct geodesics emanating from x. Let R, r $\in \mathbf{N}$ such that R+r < $\min(\ell(\gamma), \ell(\gamma'))$ and suppose R is such that d($\gamma$(R), $\gamma'(R)$) > $\delta$ (if $d(\gamma(R), \gamma`(R)) \leq \delta$ then there is nothing to do). Let p be a path from $\gamma(R+r)$ to $\gamma'(R+r)$ in $X \setminus int(B_{R+r}(x))$. We will show that there is an exponential function e satsifying e(0) = $\delta$ and $\ell(p) > e(r)$, independent of geodesics and of x. 
+	Proof: As X is hyperbolic, geodesic triangles in X are $\delta $-thin for some $\delta > 0$. Let x $\in $ X and let $\gamma, \gamma'$ be distinct geodesics emanating from x. Let R, r $\in \mathbb{N}$ such that R+r < $\min(\ell(\gamma), \ell(\gamma'))$ and suppose R is such that d($\gamma$(R), $\gamma'(R)$) > $\delta$ (if $d(\gamma(R), \gamma`(R)) \leq \delta$ then there is nothing to do). Let p be a path from $\gamma(R+r)$ to $\gamma'(R+r)$ in $X \setminus int(B_{R+r}(x))$. We will show that there is an exponential function e satsifying e(0) = $\delta$ and $\ell(p) > e(r)$, independent of geodesics and of x. 
 	
 		\begin{figure}[h]
 		\centering
@@ -107,40 +107,53 @@
 	\vs
 	
 	\underline{Step 1:}
-	
+	\vs
 	First, we inductively construct a sequence of geodesics each of length at most $2^{-n} \ell(\alpha)$ for some n, as follows: 
-	Let $\alpha$ be a geodesic path from $\gamma(R+r)$ to $\gamma'(R+r)$. Let $m_0$ be the midpoint of p. 
+	Let $\alpha$ be a geodesic path from $\gamma(R+r)$ to $\gamma'(R+r)$. Let $m$ be the midpoint of p. 
 	\vs
-	1: Join $\gamma(R+r)$ to m via a geodesic path $\alpha_0$ and m to $\gamma`(R+r)$ via geodesic $\alpha_1$. Note that $\alpha_0$ and $\alpha_1$ each have a length of at most $\ell(\alpha)/2$
+	1: Join $\gamma(R+r)$ to m via a geodesic path $\alpha_0$ and m to $\gamma`(R+r)$ via geodesic $\alpha_1$. Note that $\alpha_0$ and $\alpha_1$ each have a length of at most $\ell(p)/2$
 	\vs
-	2: Having chosen $2^n$ geodesics $\alpha_b$ (where b runs over ${0,1}^n$, for some n $\in \mathbf{N}$ (using binary sequences to enumerate the geodesics)) with each $\alpha_b$ between the points $a_{b_0}$ and $a_{b_1}$ on p, for each b let $m_b$ be the midpoint of the segment $a_{b_0},a_{b_1}$ on p, let $\alpha_{b0}$ be a geodesic connecting $a_{b_0}$ to $m_b$ and let $\alpha_{b1}$ be a geodesic connecting $m_b$ to $a_{b_1}$. As each $m_b$ subdivides the segment ($a_{b_0}, a_{b_1}$) of p which has a length of $2^{-n} \ell(p)$, ($a_{b_0}, m_b$) and ($m_b, a_{b_1}$) both have a length of $2^{-(n+1)}$. Since $\alpha_{b0}$ and $\alpha_{b1}$ are geodesics, it follows that their length is at most $2^{-(n+1)}$. 
+	2: Having chosen $2^n$ geodesics $\alpha_b$ (where b runs over $\{0,1\}^n$, for some n $\in \mathbb{N}$ (using binary sequences to enumerate the geodesics)) with each $\alpha_b$ between the points $a_{b_0}$ and $a_{b_1}$ on p, for each b let $m_b$ be the midpoint of the segment $a_{b_0},a_{b_1}$ on p, let $\alpha_{b0}$ be a geodesic connecting $a_{b_0}$ to $m_b$ and let $\alpha_{b1}$ be a geodesic connecting $m_b$ to $a_{b_1}$. As each $m_b$ subdivides the segment ($a_{b_0}, a_{b_1}$) of p which has a length of $2^{-n} \ell(p)$, ($a_{b_0}, m_b$) and ($m_b, a_{b_1}$) both have a length of $2^{-(n+1)}\ell(p)$. Since $\alpha_{b0}$ and $\alpha_{b1}$ are geodesics, it follows that their length is at most $2^{-(n+1)}\ell(p)$. 
 	\vs
 	Therefore, by induction, the desired sequence of geodesics exists. 
 	\vs 
 	
-	\underline{Step 2:} We stop our induction at an appropriate point and use the geodesics that we have constructed in the process to construct a path from x to p that will give us our exponential divergence function. 
+	\underline{Step 2:} 
+	\vs
+	We stop our induction at an appropriate point and use the geodesics that we have constructed in the process to construct a path from x to p that will give us our exponential divergence function. 
 	\vs 
 	
-	Perform the inductive process in step 1 until we have subdivided p into $2^n$ pieces, where: $\log_2(\ell(p)) \leq n \leq \log_2(\ell(p)) + 1$ (note that such n $\in \mathbf{N}$ exists because R > 0 (otherwise if R = 0, then we would obtain $\delta$ < 0 by above, which cannot be true), so R $\geq 1$ and hence $\ell(p) \geq 1$, so $\log_2(\ell(p)) \geq 0$). This choice of n ensures that each of the $2^n$ pieces of p has length in the interval [$\frac{1}{2}$, 1]
-	
+	Perform the inductive process in step 1 until we have subdivided p into $2^n$ pieces, where: $\log_2(\ell(p)) \leq n \leq \log_2(\ell(p)) + 1$ (we can always assume $\ell(p) \geq 1$, as if $r \geq 1$, then $\delta$-thinness guarantees $\ell(\alpha) \geq 1$ so $\ell(p) \geq 1$ and if $r = 0$, we can arrange for $\delta \geq 1$ to ensure $\ell(p) \geq 1$, so such n $\in \mathbb{N}$ exists). This choice of n ensures that each of the $2^n$ pieces of p has length in the interval [$\frac{1}{2}$, 1].
+	\vs
 	We now construct a sequence of points from x to p as follows: 
+	\vs
+	Note that $\triangle x \gamma(R+r) \gamma'(R+r)$ is a geodesic triangle, so there is a point v(0) $\in [\gamma`(R+r), \gamma(R+r)] \cup [x, \gamma`(R+r)]$ such that $d(\gamma(R), v(0)) \leq \delta$. But as $d(\gamma(R), \gamma`(R)) > \delta $ and triangles are $\delta$ thin, v(0) must be on $\alpha$. 
+	\vs
+	Then given v(i) on some $\alpha_{b}$, as $\alpha_{b}$, $\alpha_{b0}$, $\alpha_{b1}$ form a geodesic triangle which is $\delta $ thin, there is a point v(i+1) on $\alpha_{b0}$ or on $\alpha_{b1}$ such that d(v(i), v(i+1)) $\leq \delta$. 
+	\vs
+	We then obtain a sequence of points from x to p: x, $\gamma(R)$, v(0), v(1), ..., v(n) (where d(v(i), v(i+1)) $\leq \delta$ and d(v(n), p) $\leq 1$ ). 
 	
-	Note that $\triangle x \gamma(R+r) \gamma'(R+r)$ is a geodesic triangle, so there is a point v(0) $\in [\gamma`(R+r), \gamma(R+r)] \cup [x, \gamma`(R+r)]$ such that $d(\gamma(R+r), y) \leq \delta$. But as $d(\gamma(R), \gamma`(R)) > \delta $ and triangles are $\delta$ thin, v(0) must be on $\alpha$. 
+		\begin{figure}[h]
+		\centering
+		%	\includegraphics[width=1.2\linewidth, \vali]{"../Downloads/Diverging geodesics"}
+		\includegraphics[scale = 0.1]{"../Downloads/proof 1 step 2"}
+		\caption{Choosing a sequence of points v(i) (from Alonso et al.)}
+		\label{Figure 5: Choosing a sequence of points v(i) (Alonso et al.)}
+		
+	\end{figure}
 	
-	Then given v(i) on some $\alpha_{b}$, as $\alpha_{b}$, $\alpha_{b0}$, $\alpha_{b1}$ form a geodesic triangle which is $\delta $ slim, there is a point v(i+1) on $\alpha_{b0}$ or on $\alpha_{b1}$ such that d(v(i), v(i+1)) $\leq \delta$. 
-	
-	We then obtain a sequence of points from x to p: x, $\gamma(R)$, v(0), v(1), ..., v(n) (where d(v(i), v(i+1)) $\leq \delta$ and d(v(n), p) $\leq 1$ ). Then: 
+	Then: 
 	 
 	 \begin{align*}
 	 R+r &\leq d(x, p) \\
 	 &\leq d(x, \gamma(R)) + d(\gamma(R), v(0))+ \sum_{i=0}^{n-1} d(v(i), v(i+1)) + d(v(n), p) \\
-	 &\leq R + \delta n + 1 \\
-	 &\leq R + \delta (\log_2(\ell(p))+1) + 1
+	 &\leq R + \delta (n+1) + 1 \\
+	 &\leq R + \delta (\log_2(\ell(p))+2) + 1
 	 \end{align*}
 	
-	 Rearranging, we obtain $\ell(p) \geq 2^{\frac{r-1}{\delta} - 1}$
-	 
-	 Thus, defining e(n) = $\delta$ if n = 0 and e(n) = $2^{\frac{n-1}{\delta} - 1}$ for n > 0 gives the required exponential divergence function. Thus, geodesics diverge exponentially in X. 
+	 Rearranging, we obtain $\ell(p) \geq 2^{\frac{r-1}{\delta} - 2}$
+	 \vs
+	 Thus, defining e(n) = $\delta$ if n = 0 and e(n) = $2^{\frac{n-1}{\delta} - 3}$ for n > 0 gives the required exponential divergence function. Thus, geodesics diverge exponentially in X. 
 	 $\square$
 	  %include pictures above
 	  
@@ -162,7 +175,7 @@
  		
  	\end{figure}
  	
- 	Let e be a supralinear divergence function for X, that is, e is a divergence function satisfying $\lim_{n \rightarrow \infty} \frac{e(n)}{n} = \infty$. Let $\triangle xyz$ be a geodesic triangle. Let $\alpha_1$ be the isometry from [0, d(x,y)] corresponding to the geodesic [x,y] and similarly define $\alpha_2$ for [x,z] and $\alpha_3$ for [y,z]. Let $T_1$ be the maximum number in [0, $min(d(x,y), d(x, z))$] such that for all $t \leq T$, $d(\alpha_1(t). \alpha_2(t)) \leq e(0)$. Let $x_1 = \alpha_1(T_1)$, $x_2 = \alpha_2(T_1)$ and similarly define points $z_1, z_2, y_1, y_2$ and lengths $T_2, T_3$, as illustraed in figure 5. 
+ 	Let e be a supralinear divergence function for X, that is, e is a divergence function satisfying $\lim_{n \rightarrow \infty} \frac{e(n)}{n} = \infty$. Let $\triangle xyz$ be a geodesic triangle. Let $\alpha_1$ be the isometry from [0, d(x,z)] corresponding to the geodesic [x,z] and similarly define $\alpha_2$ for [x,y] and $\alpha_3$ for [y,z]. Let $T_1$ be the maximum number in [0, $\min(d(x,y), d(x, z))$] such that for all $t \leq T_1$, $d(\alpha_1(t), \alpha_2(t)) \leq e(0)$. Let $x_1 = \alpha_1(T_1)$, $x_2 = \alpha_2(T_1)$ and similarly define points $z_1, z_2, y_1, y_2$ and lengths $T_2, T_3$, as illustraed in figure 5. 
  	\vs
  	Let $L_1 = d(x_2, y_1)$ if $[x, x_2] \cap [y_1, y] = \emptyset$ and $L_1 = 0$ otherwise. Similarly define $L_2, L_3$ for the other sides of the triangle ($[y,z],[x,z]$, respectively). We may assume $L_3 > 0$ (otherwise if $L_3 = 0$, then we may swap $x_1$ and $z_2$ and redefine $T_1, T_3$ accordingly.)
  	\vs
@@ -183,7 +196,7 @@
  	 \vs
  	 
  	 Indeed, to show this we show that each geodesic segment of p lies outside of U. Let $B_1 = B_{
- 	 T_3 + L_2 - L_1/2}(z)$ and $B_2 = B{T_1 + L_1/2}(x)$. Then $B_1 \cup B_2 \subset X \setminus U$, since if a $\in B_1 \cap U$, then $d(a, z) \leq T_3 + L_2 - L_1/2$ and $d(a, y) < T_2 + L_1/2$, so $T_3 + L_2 + T_2 = d(z, y) \leq d(z, a) + d(a,y) < T_3 + L_2 - L_1/2 + T_2 + L_1/2 = T_1 + L_2 + T_3$, a contradiction (a similar computation gives a contradiction if a $\in B_2 \cap U$). We demonstrate that each geodesic segment of p is contained in $X \setminus U$. 
+ 	 T_3 + L_2 - L_1/2}(z)$ and $B_2 = B_{T_1 + L_1/2}(x)$. Then $B_1 \cup B_2 \subset X \setminus U$, since if a $\in B_1 \cap U$, then $d(a, z) \leq T_3 + L_2 - L_1/2$ and $d(a, y) < T_2 + L_1/2$, so $T_3 + L_2 + T_2 = d(z, y) \leq d(z, a) + d(a,y) < T_3 + L_2 - L_1/2 + T_2 + L_1/2 = T_1 + L_2 + T_3$, a contradiction (a similar computation gives a contradiction if a $\in B_2 \cap U$). We demonstrate that each geodesic segment of p is contained in $X \setminus U$. 
   \vs
   	$[t, x_2]: $ $[t, x_2] \subset B_2$ because $[t, x_2] \subset [t,x]$ and $[t,x] \subset B_2$
   	\vskip5pt
@@ -201,11 +214,15 @@
   	 \vs
   	 %By definition of $T_2$, we may choose $\epsilon$ with $0 < \epsilon < e(0) < L_1/2$ such that $d(\alpha_3(T_2 + \epsilon), \alpha_2(T_2 + \epsilon)) > e(0)$. 
   	 
-  	 Since e is a divergence function and p is outside of $U = int(B_{T_2 + L_1/2}(y))$, we have (starting the path a bit before t ($\left \lfloor{L_1/2}\right \rfloor$ instead of $L/2$) to ensure that r $\in \mathbb{N}$), or we may arrange for $L_1$ to be an even integer: 
+  	 Since e is a divergence function and p is outside of $U = int(B_{T_2 + L_1/2}(y))$, we have by definition of $T_2$, some $0 < \epsilon < e(0)$ such that $\alpha_2(T_2 + \epsilon) = \alpha_3(T_2 + \epsilon)$ (so we take $R = T_2 + \epsilon$) (we may extend e to $\mathbb{R}_{\geq 0}$, for example, by passing through the floor function). 
+  	 
+  	 %we have (starting the path a bit before t ($\left \lfloor{L_1/2}\right \rfloor$ instead of $L_1/2$) to ensure that r $\in \mathbb{N}$) (here r is the distance beyond $T_2$): 
   	 \vs
-  	 $e(\left \lfloor{L_1/2}\right \rfloor) \leq \ell(p) \leq L_1/2 + e(0) + L_3 + e(0) + (L_2 - L_1/2) \leq 2L_1 + 2e(0)$. 
+  	 $e(L_1/2 - \epsilon) \leq \ell(p) \leq L_1/2 + e(0) + L_3 + e(0) + (L_2 - L_1/2) \leq 2L_1 + 2e(0)$
+  	 %$e(\left \lfloor{L_1/2}\right \rfloor) \leq \ell(p) \leq L_1/2 + e(0) + L_3 + e(0) + (L_2 - L_1/2) \leq 2L_1 + 2e(0)$. $\lim_{x \rightarrow \infty}\frac{e(\left \lfloor{x/2}\right \rfloor)}{2x + 2e(0)}  = \infty (x \in \mathbb{R}_{\geq 0})$, 
   	 \vs
-  	 Then since $\lim_{n \rightarrow \infty}(\frac{e(n)}{n}) = \infty $, it follows that $\lim_{n \rightarrow \infty}(\frac{e(\left \lfloor{n/2}\right \rfloor)}{2L_1} + 2e(0)) = \infty $, so $\exists M$ s.t $\forall n>M$, we have $e(\left \lfloor{n/2}\right \rfloor)) > 2n + 2e(0)$. As $2L_1 + 6e(0) \geq e(\left \lfloor{L_1/2}\right \rfloor)$, we must have $2L_1 + 2e(0) \leq M$, so $L_1$ is bounded and hence there is a constant $\delta$ (independent of $\triangle xyz$, since M above depends only on e) for which $\triangle xyz$ is $\delta$-slim. 
+  	 Then since $\lim_{n \rightarrow \infty}\frac{e(n)}{n} = \infty $, it follows that $\lim_{x \rightarrow \infty}\frac{e(\frac{x}{2} - \epsilon)}{2x + 2e(0)}  = \infty ( x \geq 2\epsilon)$
+  	 so $\exists M$ s.t $\forall x>M$, we have $e(\frac{x}{2} - \epsilon) > 2x + 2e(0)$. As $2L_1 + 2e(0) \geq e(\frac{L_1}{2} - \epsilon)$, we must have $2L_1 + 2e(0) \leq M$, so $L_1$ is bounded and hence there is a constant $\delta$ (independent of $\triangle xyz$, since $\epsilon$ is in a bounded range ($0 < \epsilon < e(0)$), we can choose M large enough and independent of $\epsilon$) for which $\triangle xyz$ is $\delta$-slim. 
   	 $\square$
   	 % add pictures
  	 
